@@ -1,0 +1,30 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">TwitterApp</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "Search", root_path %></li>
+        </ul>
+      </div>
+
+      <div class="">
+        <ul class="nav pull-right">
+          <% if current_user %>
+          <li><%= link_to "Hello #{current_user.name}" %></li>
+          <li><%= link_to "Log out", logout_path %></li>
+          <% else %>
+          <li><%= link_to "Sign up", signup_path %></li>
+          <li><%= link_to "Log in", login_path %></li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>

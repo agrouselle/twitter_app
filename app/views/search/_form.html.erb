@@ -1,0 +1,21 @@
+<%= form_tag(search_index_path, :method => "get", :id => 'search-form') do %>
+
+  <div class="row">
+    <div class="span3">
+      <%= label_tag(:q, "Search for") %>
+      <%= text_field_tag(:q, params[:q], :class => 'input', :placeholder => 'Type here...') %>
+    </div>
+
+    <div class="span3">
+      <%= label_tag(:rpp, "Number of results") %>
+      <%= select_tag(:rpp, options_for_select([DEFAULT_NB_RESULTS, 10, 20, 50], params[:rpp])) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3">
+      <%= button_tag("Search", :type => 'submit', :disabled_with => 'Searching...', :class => 'btn btn-primary') %>
+      <%= button_tag("Reset", :type => 'reset', :class => 'btn') %>
+    </div>
+  </div>
+<% end %>

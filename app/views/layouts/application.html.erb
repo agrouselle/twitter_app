@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TwitterApp</title>
+  
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+</head>
+<body>
+
+  <%= render 'shared/header' %>
+
+  <% flash.each do |name, msg| %>
+  <div class="container">
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <%= content_tag :div, msg if msg.is_a?(String) %>
+    </div>
+  </div>
+  <%end %>
+
+  <%= yield %>
+
+</body>
+</html>

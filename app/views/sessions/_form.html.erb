@@ -1,0 +1,19 @@
+<%= form_tag sessions_path do %>
+
+  <p>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email]  %>
+  </p>
+
+  <p>
+    <%= label_tag :password %>
+    <%= password_field_tag :password  %>
+  </p>
+
+  <p>
+    <%= button_tag("Log in", :class => "btn btn-primary") %>
+  </p>
+
+  <br/>
+  <p>No account? <%= link_to "Sign up", signup_path %> </p>
+<% end %>
